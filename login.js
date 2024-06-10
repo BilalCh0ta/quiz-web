@@ -4,21 +4,55 @@ let users  =  JSON.parse(localStorage.getItem('user'))
 let showData = document.querySelector('#showData')
 
 
-users.map((allUser)=>{
 
-    // showData.innerHTML = ""
-showData.innerHTML += `<div>
-<h1> ${allUser.username} </h1>
-<h1> ${allUser.email} </h1>
-<h1> ${allUser.password} </h1>
 
-</div>
-`
+console.log(users);
+
+
+// let loginBtn= document.querySelector('.login-btn')
+
+let loginForm  = document.querySelector(".login-form")
+
+
+let loginName = document.querySelector('.login-name')
+
+let loginEmail = document.querySelector('.email')
+
+let loginPassword = document.querySelector('.password')
+
+
+loginForm.addEventListener("submit" , (event)=>{
+    event.preventDefault()
+ 
+let match = users.filter((persons)=> persons.email ===loginEmail.value)
+
+if(match.length ===0){
+    alert('email does not exit signup first')
+}
+
+else{
+    console.log(match[0].password);
+    match[0].password ===loginPassword.value ? alert('sucess login') 
+  ( window.location ='quiz.html')
+    
+    :   
+    (alert("incorect password"))
+}
 
 })
 
 
-console.log(users);
+
+// login function
+
+
+
+
+
+
+
+
+
 
 
 

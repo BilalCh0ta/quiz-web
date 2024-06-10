@@ -28,38 +28,35 @@ form.addEventListener('submit' , (event)=>{
 event.preventDefault()
 
 
-// show all values on console
-    console.log(fullName.value);
-    console.log(email.value);
-    console.log(password.value);
 
+// regmail problem solution (agar aik email dubara user to alert show kerde k dubara use nhi ker sakte)
+let checksEmail = userData.some((items) => items.email === email.value)
 
-
-// push all values on userData array
-
-
-if(isEmailRegistered(email)){
-    alert("this email is already use")
-}
-
-else{
+if(!checksEmail){
     userData.push(
         {username : fullName.value,
             email : email.value,
             password : password.value
         })
-}
+alert("signup successfully")
+
+        }
+        
+        else{
+            alert("this email is already use")
+        }
 
 
 
-// console.log(userData);
+
 
 })
 
 
-function isEmailRegistered(email) {
-    return userData.includes(email.value);
-}
+
+
+
+
 
 
 
