@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+<!-- css  -->
+    <style>
+        body{
+            background-color: rgb(50, 36, 65);
+        }
+.main{
+    width: 300px;
+    background-color: rgb(157, 92, 222);
+    margin:13rem auto;
+    padding: 2rem;
+    
+}
+.res{
+    color: rgb(50, 36, 65);
+    text-align: center;
+}
+.result{
+    text-align: center;
+    color: ;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <h1 class="res">Result</h1>
+        <h1 class="result"></h1>
+    </div>
+
+
+    <script>
+        const result = JSON.parse(localStorage.getItem("result"))
+        const h1 = document.querySelector('.result');
+        h1.innerHTML = `Marks ${result.result}/${result.totalMarks}`
+        console.log(result);
+    </script>
+</body>
+</html>
